@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const path = require('path');
@@ -7,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 
-const uri = 'mongodb://localhost:27017';
+const uri = process.env.MONGO_URI;
 MongoClient.connect(uri)
 .then((client) => {
   const database = client.db('fitnessApp');
