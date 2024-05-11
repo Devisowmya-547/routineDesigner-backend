@@ -1,7 +1,6 @@
 const express = require('express');
 const userApp = express.Router();
 const bcryptjs = require('bcryptjs');
-const { useRevalidator } = require('react-router-dom');
 
 let refEmail;
 let userCollection;
