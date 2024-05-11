@@ -16,13 +16,10 @@ MongoClient.connect(uri)
   const userCollection = database.collection('userCollection');
 
   app.set('userCollection', userCollection);
-  console.log('DB connection established');
 })
 .catch((error) => {console.log(error)})
 
-app.listen(8000, () => {
-  console.log('listening on port 8000');
-})
+app.listen(8000)
 
 app.use('/user', userApp)
 
